@@ -1,20 +1,20 @@
-п»ї#include <iostream>
+#include <iostream>
 #include <string>
 #include <limits>
-// РџСЂРѕРІРµСЂРєР° РїРµСЂРµРјРµРЅРЅС‹С…
+// Проверка переменных
 void numberSaveAndCheck(double& a, double& b) {
 	while (true) {
-		std::cout << std::endl << "Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ: ";
+		std::cout << std::endl << "Введите первое число: ";
 		if (!(std::cin >> a)) {
-			std::cerr << std::endl << "РћС€РёР±РєР°, РІС‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ РёР»Рё СЃР»РёС€РєРѕРј Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ" << std::endl;
+			std::cerr << std::endl << "Ошибка, вы ввели не число или слишком большое число" << std::endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			continue;
 		}
 
-		std::cout << "Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ";
+		std::cout << "Введите второе число: ";
 		if (!(std::cin >> b)) {
-			std::cerr << std::endl << "РћС€РёР±РєР°, РІС‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ РёР»Рё СЃР»РёС€РєРѕРј Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ" << std::endl;
+			std::cerr << std::endl << "Ошибка, вы ввели не число или слишком большое число" << std::endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			continue;
@@ -22,7 +22,7 @@ void numberSaveAndCheck(double& a, double& b) {
 		break;
 	}
 }
-// РњР°С‚РµРјР°С‚РёС‡РµСЃРєРёРµ СЂР°СЃС‡РµС‚С‹
+// Математические расчеты
 double result(double a, double b, char c) {
 	switch (c) {
 	case '+': return a + b;
@@ -32,14 +32,14 @@ double result(double a, double b, char c) {
 	}
 	return 0;
 }
-// РЎР°Рј РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ
+// Сам калькулятор
 int main() {
 	setlocale(LC_ALL, "RU");
 	while (true) {
 		short d;
-		std::cout << std::endl << "Р’РІРµРґРёС‚Рµ 1 РёР»Рё 2" << std::endl << "1 - РџСЂРѕРґРѕР»Р¶РёС‚СЊ" << std::endl << "2 - Р’С‹Р№С‚Рё" << std::endl;
+		std::cout << std::endl << "Введите 1 или 2" << std::endl << "1 - Продолжить" << std::endl << "2 - Выйти" << std::endl;
 		if (!(std::cin >> d)) {
-			std::cerr << std::endl << "РћС€РёР±РєР°, РІС‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ РёР»Рё СЃР»РёС€РєРѕРј Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ" << std::endl;
+			std::cerr << std::endl << "Ошибка, вы ввели не число или слишком большое число" << std::endl;
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			continue;
@@ -51,9 +51,9 @@ int main() {
 		if (d != 1 and d != 2) {
 			short e;
 			while (true) {
-				std::cout << std::endl << "Р’РІРµРґРёС‚Рµ 1 РёР»Рё 2" << std::endl << "1 - РџСЂРѕРґРѕР»Р¶РёС‚СЊ" << std::endl << "2 - Р’С‹Р№С‚Рё" << std::endl;
+				std::cout << std::endl << "Введите 1 или 2" << std::endl << "1 - Продолжить" << std::endl << "2 - Выйти" << std::endl;
 				if (!(std::cin >> e)) {
-					std::cerr << std::endl << "РћС€РёР±РєР°, РІС‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ РёР»Рё СЃР»РёС€РєРѕРј Р±РѕР»СЊС€РѕРµ С‡РёСЃР»Рѕ" << std::endl;
+					std::cerr << std::endl << "Ошибка, вы ввели не число или слишком большое число" << std::endl;
 					std::cin.clear();
 					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 					continue;
@@ -72,20 +72,20 @@ int main() {
 		char c;
 
 		numberSaveAndCheck(a, b);
-		std::cout << std::endl << "РЎРїРёСЃРѕРє РґРѕСЃС‚СѓРїРЅС‹С… РѕРїРµСЂР°С‚РѕСЂРѕРІ: " << std::endl << "+ - РџР»СЋСЃ" << std::endl << "- - РњРёРЅСѓСЃ" << std::endl << "* - РЈРјРЅРѕР¶РµРЅРёРµ" << std::endl << "/ - Р”РµР»РµРЅРёРµ" << std::endl;
+		std::cout << std::endl << "Список доступных операторов: " << std::endl << "+ - Плюс" << std::endl << "- - Минус" << std::endl << "* - Умножение" << std::endl << "/ - Деление" << std::endl;
 		std::string input;
 		std::cin >> input;
 
 		while (true) {
 			if (input.length() != 1) {
-				std::cout << "РћС€РёР±РєР°, РѕРїРµСЂР°С†РёСЏ РЅРµ РјРѕР¶РµС‚ СЃРѕРґРµСЂР¶Р°С‚СЊ Р±РѕР»СЊС€Рµ РѕРґРЅРѕРіРѕ СЃРёРјРІРѕР»Р°!" << std::endl;
-				std::cout << std::endl << "РЎРїРёСЃРѕРє РґРѕСЃС‚СѓРїРЅС‹С… РѕРїРµСЂР°С‚РѕСЂРѕРІ: " << std::endl << "+ - РџР»СЋСЃ" << std::endl << "- - РњРёРЅСѓСЃ" << std::endl << "* - РЈРјРЅРѕР¶РµРЅРёРµ" << std::endl << "/ - Р”РµР»РµРЅРёРµ" << std::endl;
+				std::cout << "Ошибка, операция не может содержать больше одного символа!" << std::endl;
+				std::cout << std::endl << "Список доступных операторов: " << std::endl << "+ - Плюс" << std::endl << "- - Минус" << std::endl << "* - Умножение" << std::endl << "/ - Деление" << std::endl;
 				std::cin >> input;
 			}
 
 			if (input != "+" && input != "-" && input != "*" && input != "/") {
-				std::cout << "РћС€РёР±РєР°, РЅРµРїРѕРґРґРµСЂР¶РёРІР°РµРјР°СЏ РѕРїРµСЂР°С†РёСЏ!" << std::endl;
-				std::cout << std::endl << "РЎРїРёСЃРѕРє РґРѕСЃС‚СѓРїРЅС‹С… РѕРїРµСЂР°С‚РѕСЂРѕРІ: " << std::endl << "+ - РџР»СЋСЃ" << std::endl << "- - РњРёРЅСѓСЃ" << std::endl << "* - РЈРјРЅРѕР¶РµРЅРёРµ" << std::endl << "/ - Р”РµР»РµРЅРёРµ" << std::endl;
+				std::cout << "Ошибка, неподдерживаемая операция!" << std::endl;
+				std::cout << std::endl << "Список доступных операторов: " << std::endl << "+ - Плюс" << std::endl << "- - Минус" << std::endl << "* - Умножение" << std::endl << "/ - Деление" << std::endl;
 				std::cin >> input;
 			}
 
@@ -96,8 +96,8 @@ int main() {
 		}
 		if (b == 0 && c == '/') {
 			while (true) {
-				std::cout << std::endl << "РћС€РёР±РєР° РґРµР»РёС‚СЊ РЅР° 0 РЅРµР»СЊР·СЏ" << std::endl;
-				std::cout << "Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ: ";
+				std::cout << std::endl << "Ошибка делить на 0 нельзя" << std::endl;
+				std::cout << "Введите второе число: ";
 				std::cin >> b;
 				if (b != 0) {
 					break;
@@ -107,7 +107,7 @@ int main() {
 
 		double r = result(a, b, c);
 
-		std::cout << "Р РµР·СѓР»СЊС‚Р°С‚: " << r << std::endl;
+		std::cout << "Результат: " << r << std::endl;
 	}
 	return 0;
 }
