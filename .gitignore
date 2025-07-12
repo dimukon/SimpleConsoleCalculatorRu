@@ -1,0 +1,13 @@
+# Игнорировать файлы Visual Studio
+.vs/
+*.suo
+*.user
+*.ipch
+*.vcxproj.user
+*.VC.db
+
+# Игнорировать временные файлы
+bin/
+obj/
+Debug/
+Release/
